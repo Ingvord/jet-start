@@ -2,9 +2,8 @@
   "presets": [
     ["env", {
       "targets": {
-        "browsers": ["last 2 versions", "IE >= 11"]
+        "esmodules": true
       },
-      "modules":false,
       "loose":true
     }]
   ],

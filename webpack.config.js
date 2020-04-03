@@ -1,5 +1,5 @@
-var path = require("path");
-var webpack = require("webpack");
+const path = require("path");
+const webpack = require("webpack");
 
 module.exports = function(env) {
 
@@ -17,11 +17,11 @@ module.exports = function(env) {
 	var config = {
 		mode: production ? "production" : "development",
 		entry: {
-			myapp: "./sources/myapp.js"
+			myapp: "./src/myapp.js"
 		},
 		output: {
-			path: path.join(__dirname, "codebase"),
-			publicPath:"/codebase/",
+			path: path.join(__dirname, "js"),
+			publicPath:"/js/",
 			filename: "[name].js",
 			chunkFilename: "[name].bundle.js"
 		},
@@ -44,10 +44,10 @@ module.exports = function(env) {
 		stats:"minimal",
 		resolve: {
 			extensions: [".js"],
-			modules: ["./sources", "node_modules"],
+			modules: ["./src", "node_modules"],
 			alias:{
-				"jet-views":path.resolve(__dirname, "sources/views"),
-				"jet-locales":path.resolve(__dirname, "sources/locales")
+				"jet-views":path.resolve(__dirname, "src/views"),
+				"jet-locales":path.resolve(__dirname, "src/locales")
 			}
 		},
 		plugins: [
